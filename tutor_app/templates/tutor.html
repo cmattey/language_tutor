@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+{% if index<3 %}
+<h2>{{prompts[index]}}</h2>
+{% else %}
+<h2>{{q_a[index]}}</h2>
+{% endif %}
+<!-- <form action="" method="post">
+  <p>Add Answer Form</p>
+</form> -->
+<a href="/tutor">Next</a>
+{% endblock %}
