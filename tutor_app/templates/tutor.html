@@ -1,12 +1,26 @@
 {% extends "base.html" %}
+
 {% block content %}
-{% if index<3 %}
-<h2>{{prompts[index]}}</h2>
+<div align="center">
+{% if index<4 %}
+
+  <p>Prompt:</p>
+  <h2>{{ slides[index] }}</h2>
+  <form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>{{ form.next()  }}</p>
+  </form>
 {% else %}
-<h2>{{q_a[index]}}</h2>
+
+  <p>Question:</p>
+  <h2>{{ slides[index][0] }}</h2>
+  <form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>{{ form.answer.label }}<br></p>
+    <p>{{ form.answer() }}</p>
+
+    <p>{{form.next()}}</p>
+  </form>
 {% endif %}
-<!-- <form action="" method="post">
-  <p>Add Answer Form</p>
-</form> -->
-<a href="/tutor">Next</a>
+</div>
 {% endblock %}
